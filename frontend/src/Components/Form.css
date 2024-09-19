@@ -1,0 +1,643 @@
+
+/* Form.css */
+
+.container {
+  position: relative;
+  display: flex;
+  /* padding: -5%; */
+  justify-content: center;
+  align-items: center;
+  /* min-height: 100vh; */
+  height: 100vh;
+  width: 100vw;
+  background-color: #f5f5f5;
+}
+
+
+
+.movingLine {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  height: 4px;
+  width: 100%;
+  background: linear-gradient(to right, #000, #fff); /* Adjust colors as needed */
+  animation: moveLine 6s infinite;
+}
+
+@keyframes moveLine {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(100%);
+  }
+}
+
+
+/* Responsive styles */
+@media (max-width: 768px) {
+  .formBox {
+    flex-direction: column;
+  }
+
+  .left, .right {
+    width: 100%;
+  }
+
+  .movingLine {
+    height: 3px;
+  }
+}
+
+
+
+
+
+.formBox {
+  display: flex;
+  background: rgba(255, 255, 255, 0.9);
+  padding: 19px;
+  width: 100%;
+  max-width: 1000px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  position: relative;
+  z-index: 1;
+}
+
+
+
+.closeButton {
+  position: absolute;
+  top: 10px;
+  right: 12px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+  padding: 10px; 
+  border-radius: 50%;
+  z-index: 100;
+}
+
+.closeButton:hover {
+  color: #ff0000;
+}
+
+.left {
+  flex: 2;
+}
+
+.image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 10px;
+}
+
+.right {
+  flex: 3;
+  padding-left: 15px;
+  position: relative;
+}
+
+.heading {
+  font-size: 39px;
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.subheading {
+  font-size: 18px;
+  text-align: center;
+margin-bottom: 30px;
+  color: rgb(62, 62, 62);
+}
+
+.formFields {
+  display: flex;
+  flex-direction: column;
+  margin: 3%;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 35px;
+  position: relative;
+}
+
+.row input, .row select {
+  flex: 1;
+  padding: 15px;
+  border: 1px solid #a19f9f;
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  outline: none;
+}
+
+.row input:focus, .row select:focus {
+  border-color: #007BFF;
+  box-shadow: inset 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.row .label2 {
+  position: absolute;
+  top: -12px;
+  left: 20px;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16.2px;
+  text-align: left;
+  background: white;
+  padding: 0 5px;
+  color: #818080;
+  transition: all 0.3s;
+}
+
+.row label {
+  position: absolute;
+  top: -12px;
+  left: 54%;
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16.2px;
+  text-align: left;
+  background: white;
+  padding: 0 5px;
+  color: #818080;
+  transition: all 0.3s;
+}
+
+.fullWidth {
+  margin-bottom: 15px;
+  width: 94%;
+}
+
+.fullWidth input {
+  width: 100%;
+  padding: 15px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.checkboxRow {
+  display: flex;
+  align-items: center;
+  margin-bottom: 15px;
+}
+
+.checkboxRow input {
+  margin-right: 10px;
+}
+
+.submitButton {
+  padding: 15px;
+  background-color: #2c8468;
+  color: white;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 800;
+  margin-top: 15px;
+}
+
+
+
+.submitButton:hover {
+  background-color: #0056b3;
+}
+
+
+@media (max-width: 968px) {
+  .row {
+    position: relative;
+    margin-bottom: 15px;
+  }
+  
+  .row .label2 {
+    position: absolute;
+    top: 0;
+    left: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 16.2px;
+    text-align: left;
+    background: white;
+    padding: 0 5px;
+    color: #818080;
+    transition: all 0.3s;
+    pointer-events: none;
+  }
+  
+  .row input, .row select {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #a19f9f;
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    outline: none;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  .row .input-container {
+    position: relative;
+  }
+}
+
+@media (max-width: 768px) {
+  .formBox {
+    flex-direction: column;
+  }
+  
+  .row .label2 {
+    position: absolute;
+    top: -12px;
+    left: 20px;
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 16.2px;
+    text-align: left;
+    background: white;
+    padding: 0 5px;
+    color: #818080;
+    transition: all 0.3s;
+  }
+  
+  .image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 5px;
+  }
+  
+  .row label {
+    position: absolute;
+    top: 40px;
+    left: 4%;
+    font-family: 'Poppins', sans-serif;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 16.2px;
+    text-align: left;
+    background: white;
+    padding: 0 5px;
+    color: #818080;
+    transition: all 0.3s;
+  }
+  
+  .row input, .row select {
+    flex: 1;
+    padding: 10px;
+    border: 1px solid #a19f9f;
+    border-radius: 10px;
+    box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+    outline: none;
+  }
+  
+  .right {
+    padding-left: 0;
+  }
+  
+  .heading {
+    font-size: large;
+    text-align: center;
+  }
+  
+  .row {
+    flex-direction: column;
+  }
+
+  .submitButton {
+    width: 100%;
+  }
+}
+
+.thankYouMessage {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  text-align: center;
+  max-width: 100%;
+}
+
+.tick {
+  width: 95px;
+  height: 95px;
+  margin-bottom: -130px;
+  margin-right: 460px;
+  margin-top: 3px;
+}
+
+.thankYouMessage h1 {
+  font-size: 30px;
+  margin-left: 12%;
+  margin-top: 6%;
+}
+
+.thankYouMessage p {
+  margin-left: 12%;
+  margin-top: 1px;
+  font-size: larger;
+}
+
+.closeButton {
+  font-size: 24px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #333;
+  position: absolute;
+  top: 10px;
+  right: 2px;
+}
+
+.thankYouMessage .six_second {
+  margin-top: 240px;
+  font-size: 1em; 
+  font-family: 'Arial', sans-serif;
+  color: #333; 
+  text-align: center; 
+  max-width: 100%; 
+  line-height: 1;
+}
+
+.thankYouMessage .closeButton {
+  position: absolute;
+  top: 8px;
+  right: 6px;
+  background: transparent;
+  border: none;
+  font-size: 24px;
+  color: #333;
+  cursor: pointer;
+}
+
+.thankYouMessage .closeButton:hover {
+  color: #ff0000;
+}
+
+.showFormButton {
+  padding: 15px;
+  background-color: #2c8468;
+  color: white;
+  border: none;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 800;
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+}
+
+.showFormButton:hover {
+  background-color: #0056b3;
+}
+
+
+
+.date-picker-disabled {
+  color: transparent;
+  background-color: #f5f5f5; 
+}
+
+.date-picker-disabled:hover {
+  cursor: not-allowed;
+}
+
+.datePicker {
+  width: 100%; 
+  padding: 0.5rem; 
+  box-sizing: border-box; 
+  border: 1px solid #ccc; 
+  border-radius: 4px; 
+  font-size: 1rem; 
+  margin-bottom: 0.5rem; 
+}
+
+.datePicker.react-datepicker__input-container {
+  width: 100%;
+}
+
+.row {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 35px;
+}
+
+.timeContainer, .dateContainer {
+  flex: 1; 
+}
+
+.timeSelect {
+  width: 100%;
+  padding: 1px;
+  border: 1px solid #a19f9f;
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.timeSelect:focus, .datePicker:focus {
+  border-color: #007BFF;
+  box-shadow: inset 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+
+.datePicker {
+  width: 137%;
+  padding: 1px;
+  border: 1px solid #a19f9f;
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.row {
+  display: flex;
+  gap: 10px; 
+  margin-bottom: 25px;
+}
+
+
+
+.timeContainer, .dateContainer {
+  flex: 1;
+  display: flex;
+  flex-direction: column; 
+}
+
+.timeSelect, .datePicker {
+  width: 100%;
+  height: 47.7px;
+  padding: 1px;
+  border: 1px solid #a19f9f;
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.timeSelect:focus, .datePicker:focus {
+  border-color: #007BFF;
+  box-shadow: inset 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.label2 {
+  display: block; 
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16.2px;
+  text-align: left;
+  background: white;
+  padding: 0 5px;
+  color: #818080;
+  transition: all 0.3s;
+  margin-bottom: 5px; }
+
+.label3{
+  position: absolute;
+  z-index: 1;
+}
+
+.timeContainer .label2{
+  max-height: 10px;
+}
+.row .timeneed{
+padding: 1%;
+height: 47px;
+}
+
+.emailContainer {
+  flex: 1; /* Ensures equal width */
+  display: flex;
+}
+
+.emailInput {
+  width: 100%;
+  padding: 0.3rem; 
+  border: 1px solid #a19f9f;
+  border-radius: 10px;
+  box-shadow: inset 0 0 5px rgba(0, 0, 0, 0.2);
+  outline: none;
+  font-family: 'Poppins', sans-serif;
+}
+
+.emailInput:focus, .phoneInput:focus {
+  border-color: #007BFF;
+  box-shadow: inset 0 0 5px rgba(0, 123, 255, 0.5);
+}
+
+.label2 {
+  display: block; 
+  font-family: 'Poppins', sans-serif;
+  font-size: 13px;
+  font-weight: 400;
+  line-height: 16.2px;
+  text-align: left;
+  background: white;
+  padding:  5px;
+  color: #818080;
+  transition: all 0.3s;
+  margin-bottom: 5px; 
+}
+
+.emailContainer, .phoneContainer {
+  margin-bottom: 0.1rem; }
+
+
+
+.phoneContainer {
+  flex: 1; 
+  display: flex;
+  flex-direction: column; 
+  border: 1px solid rgb(157, 154, 154);
+  border-radius: 5px;
+}
+
+
+
+
+
+.phoneContainer .PhoneInput{
+  border: 0.1px solid rgb(252, 248, 248);
+}
+
+
+.PhoneInput{
+  border: 0.1px solid rgb(252, 248, 248);
+
+}
+.react-international-phone-input{
+background-color: red;
+}
+/* .react-international-phone-input-container .react-international-phone-input {
+  overflow: visible;
+  height: var(--react-international-phone-height, 46px);
+  box-sizing: border-box;
+  padding: 19px 16px;
+  border: 1px solid var(--react-international-phone-border-color, gainsboro);
+  border-radius: var(--react-international-phone-border-radius, 4px);
+  margin: 0;
+  background-color: var(--react-international-phone-background-color, white);
+  border-bottom-left-radius: 0;
+  border-top-left-radius: 0;
+  color: var(--react-international-phone-text-color, #222);
+  font-family: inherit;
+  font-size: var(--react-international-phone-font-size, 13px);
+}
+.react-international-phone-input-container .react-international-phone-country-selector-button {
+  border-radius: var(--react-international-phone-border-radius, 9px);
+  margin-right: -1px;
+  border-bottom-right-radius: 0;
+  border-top-right-radius: 0;
+  height: 46px;
+} */
+
+.react-international-phone-input{
+  overflow: visible;
+height: var(--react-international-phone-height, 36px);
+box-sizing: border-box;
+padding: 0 8px;
+border: 1px solid var(--react-international-phone-border-color, gainsboro);
+border-radius: var(--react-international-phone-border-radius, 4px);
+margin: 0;
+background-color: var(--react-international-phone-background-color, white);
+border-bottom-left-radius: 0;
+border-top-left-radius: 0;
+color: var(--react-international-phone-text-color, #222);
+font-family: inherit;
+font-size: var(--react-international-phone-font-size, 20px);
+}
+
+.phoneInputWrapper {
+  display: flex;
+  align-items: center;
+  /* Add any other styling you need */
+}
+
+.customPhoneInput {
+  border: 0.2px solid #ccc; /* Example border */
+  border-radius: 4px; /* Example border-radius */
+  padding: 8px; /* Example padding */
+  width: 100%; /* Adjust width as needed */
+}
+
+/* Additional styles to override default library styles */
+.customPhoneInput input {
+  background-color: #f9f9f9; /* Example background color */
+  font-size: 16px; /* Adjust font size as needed */
+}
